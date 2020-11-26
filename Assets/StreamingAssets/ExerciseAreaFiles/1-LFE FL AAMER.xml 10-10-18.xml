@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExerciseArea>
+<Data Exercise_Range="" MapTransparency="0.49" templateName="Sargodha complete area_2.template">
+<Description/>
+</Data>
+<AirFields/>
+<BombLines/>
+<Bridges/>
+<CAPs/>
+<Exercise_Area_Boundary/>
+<General_Geometrys>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="30.1036" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="72.1600" Name="V" Rotation="5.740901200041647E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="30.2072" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="71.4239" Name="MT" Rotation="5.740901200041647E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="30.7569" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="72.2928" Name="RFQ" Rotation="5.740901200041647E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="32.0586" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="72.6731" Name="MSF" Rotation="5.740901200041647E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="31.3683" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="73.0028" Name="OPFA" Rotation="5.740901200041647E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HeightRadius=" 3.0000" ID="1.0" Latitude="31.6306" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="72.4633" Name="S" Rotation="20.99999999999998" Transparency="1.0" Type="Rectangle" Unit="NM" WidthRadius=" 3.0000">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="30.9747" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="70.9461" Name="SOUTH" Rotation="20.99999999999998" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="30.4914" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="70.9761" Name="KA" Rotation="-1.229284384385649E-12" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="31.9167" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="70.8956" Name="DIK" Rotation="2.3854160110976374E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="31.4219" LineColor="-16776961" LineThickness="2.0" Longitude="72.0381" Name="THAL" Rotation="-4.4527765540489223E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="10.0" ID="1.0" Latitude="32.5661" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="71.5764" Name="MMA" Rotation="-4.4527765540489223E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="10.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="32.0864" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="72.2803" Name="GT" Rotation="-4.4527765540489223E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="32.3911" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="71.4542" Name="C" Rotation="-4.4527765540489223E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="3.199784017278618" ID="1.0" Latitude="31.3586" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="72.3806" Name="" Rotation="-1.545749575191269E-12" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="3.199784017278618">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="31.2572" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="2.0" Longitude="70.6717" Name="" Rotation="-1.545749575191269E-12" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="20.0" ID="1.0" Latitude="30.7972" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="71.0700" Name="" Rotation="-1.545749575191269E-12" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="20.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="30.9869" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="70.9511" Name="" Rotation="-4.1983321795318433E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="5.0" ID="1.0" Latitude="31.0211" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="70.6861" Name="" Rotation="-4.1983321795318433E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="5.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="40.0" ID="1.0" Latitude="30.7972" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="71.0700" Name="" Rotation="-4.1983321795318433E-13" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="40.0">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+<General_Geometry FillColor="0" HorizontalRadius="3.199784017278618" ID="1.0" Latitude="31.8606" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="3.0" Longitude="71.4375" Name="" Rotation="5.0602624982084556E-12" Transparency="1.0" Type="Ellipse" Unit="NM" VerticalRadius="3.199784017278618">
+<Font Color="-16776961" Name="Arial" Size="12" Style="0"/>
+</General_Geometry>
+</General_Geometrys>
+<GDAs/>
+<Labels/>
+<Lines>
+<Line ID="1.0" Latitude_End="31.3703" Latitude_Start="29.8833" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="69.7400" Longitude_Start="71.1267" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.3703" Latitude_Start="33.2803" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="69.7400" Longitude_Start="71.1189" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="33.3556" Latitude_Start="33.2803" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="71.8008" Longitude_Start="71.1189" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="32.6106" Latitude_Start="33.3556" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.1003" Longitude_Start="71.8008" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8125" Latitude_Start="32.6106" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.8181" Longitude_Start="73.1003" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="30.3569" Latitude_Start="31.8125" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.4286" Longitude_Start="73.8181" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="29.8833" Latitude_Start="30.3569" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="71.1267" Longitude_Start="72.4286" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.2836" Latitude_Start="32.5681" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Dashed" LineWidth="5.0" Longitude_End="73.0517" Longitude_Start="70.8192" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="32.6833" Latitude_Start="32.4003" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="73.6678" Longitude_Start="73.4358" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="33.6186" Latitude_Start="32.6833" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="72.0167" Longitude_Start="73.6678" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="33.3506" Latitude_Start="33.6186" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="71.8003" Longitude_Start="72.0167" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="33.3506" Latitude_Start="32.4003" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="71.8003" Longitude_Start="73.4358" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.3011" Latitude_Start="30.0008" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="69.8000" Longitude_Start="71.0172" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.5025" Latitude_Start="31.3011" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="70.1011" Longitude_Start="69.8000" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="30.2181" Latitude_Start="31.5025" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="71.3175" Longitude_Start="70.1011" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="30.0008" Latitude_Start="30.2181" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="4.0" Longitude_End="71.0172" Longitude_Start="71.3175" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.2933" Latitude_Start="33.1606" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="69.8897" Longitude_Start="71.2678" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.3646" Latitude_Start="31.2933" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="69.7398" Longitude_Start="69.8897" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="33.2506" Latitude_Start="33.1606" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="71.0856" Longitude_Start="71.2678" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="30.5225" Latitude_Start="31.8117" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.5822" Longitude_Start="73.8183" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="30.6214" Latitude_Start="30.5225" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.4344" Longitude_Start="72.5822" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.9158" Latitude_Start="30.6214" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.6664" Longitude_Start="72.4344" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8117" Latitude_Start="31.9158" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.8183" Longitude_Start="73.6664" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="32.6106" Latitude_Start="31.8125" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.1003" Longitude_Start="73.8181" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="32.5206" Latitude_Start="32.6106" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.9553" Longitude_Start="73.1003" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.7206" Latitude_Start="32.5206" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.6686" Longitude_Start="72.9553" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.1012" Latitude_Start="31.1012" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="5.0" Longitude_End="77.8385" Longitude_Start="77.8385" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.1012" Latitude_Start="31.1012" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="5.0" Longitude_End="77.8385" Longitude_Start="77.8385" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8125" Latitude_Start="31.7206" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.8181" Longitude_Start="73.6686" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8095" Latitude_Start="31.8095" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="5.0" Longitude_End="73.5340" Longitude_Start="73.5340" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.9019" Latitude_Start="31.6019" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.7747" Longitude_Start="72.5017" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8856" Latitude_Start="31.6506" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="72.6367" Longitude_Start="72.4250" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.1386" Latitude_Start="31.2647" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.1742" Longitude_Start="73.2906" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.2092" Latitude_Start="31.1386" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.0758" Longitude_Start="73.1742" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.3375" Latitude_Start="31.2092" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.1911" Longitude_Start="73.0758" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.2647" Latitude_Start="31.3375" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="73.2906" Longitude_Start="73.1911" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="32.0847" Latitude_Start="32.0616" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="70.9894" Longitude_Start="70.2322" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.9339" Latitude_Start="32.0847" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="71.0022" Longitude_Start="70.9894" Name="line" Transparency="1.0"/>
+<Line ID="1.0" Latitude_End="31.8925" Latitude_Start="31.9339" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineStyle="Standard" LineWidth="3.0" Longitude_End="70.1104" Longitude_Start="71.0022" Name="line" Transparency="1.0"/>
+</Lines>
+<MDAs/>
+<Parallel_Lines/>
+<Radars/>
+<Rail_Tracks/>
+<Roads/>
+<Rivers/>
+<Vulnerable_Points/>
+<Buildings/>
+<Cones/>
+<BullsEye>
+<BullsEye ID="1.0" Latitude="31.1878" LineAngle="30" LineColor="RGBA(1.000, 0.922, 0.016, 1.000)" LineThickness="0.20000000298023224" Longitude="71.2097" Name="" NumOfCircles="7" Radius="20.0" Unit="NM">
+<Font Color="-16777216" Name="Arial" Size="12" Style="0"/>
+</BullsEye>
+</BullsEye>
+<SAM/>
+</ExerciseArea>

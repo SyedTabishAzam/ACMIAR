@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExerciseArea>
+	<Lines>
+		<Line Transparency="1.0" Name="line" LineColor="255" ID="0" Longitude_Start="71°36'27&quot;" Longitude_End="72°18'35&quot;" LineWidth="3.0" LineStyle="Standard" Latitude_Start="32°0'21&quot;" Latitude_End="32°0'43&quot;" />
+	</Lines>
+	<BullsEye />
+	<Circle />
+</ExerciseArea>

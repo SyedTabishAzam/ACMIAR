@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExerciseArea>
+	<Lines>
+		<Line Transparency="1.0" Name="line" LineColor="-16711681" ID="0" Longitude_Start="71.3" Longitude_End="72.6125" LineWidth="3.0" LineStyle="Standard" Latitude_Start="32.78125" Latitude_End="32.225" />
+		<Line Transparency="1.0" Name="line" LineColor="65535" ID="1" Longitude_Start="71.3" Longitude_End="70.775" LineWidth="3.0" LineStyle="Standard" Latitude_Start="32.76875" Latitude_End="31.3875" />
+		<Line Transparency="1.0" Name="line" LineColor="-16776961" ID="2" Longitude_Start="71.16875" Longitude_End="70.69375" LineWidth="3.0" LineStyle="Standard" Latitude_Start="32.7875" Latitude_End="31.45625" />
+		<Line Transparency="1.0" Name="line" LineColor="16777215" ID="3" Longitude_Start="71.33125" Longitude_End="72.69375" LineWidth="3.0" LineStyle="Standard" Latitude_Start="32.85625" Latitude_End="32.28125" />
+		<Line Transparency="1.0" Name="line" LineColor="16711935" ID="4" Longitude_Start="70.8125" Longitude_End="72.5625" LineWidth="3.0" LineStyle="Standard" Latitude_Start="31.31875" Latitude_End="32.125" />
+	</Lines>
+	<BullsEye>
+		<BullsEye Latitude="32.16875" Longitude="72.625" LineAngle="" ID="0" LineColor="65535" LineThickness="0.1" Name="BullEye0" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+		<BullsEye Latitude="32.84375" Longitude="71.2875" LineAngle="" ID="1" LineColor="-16711681" LineThickness="0.1" Name="BullEye1" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+		<BullsEye Latitude="31.33125" Longitude="70.775" LineAngle="" ID="2" LineColor="16711935" LineThickness="0.1" Name="BullEye2" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+		<BullsEye Latitude="32.675" Longitude="71.33125" LineAngle="" ID="3" LineColor="-16776961" LineThickness="0.1" Name="BullEye3" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+		<BullsEye Latitude="31.45" Longitude="70.875" LineAngle="" ID="4" LineColor="16777215" LineThickness="0.1" Name="BullEye4" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+		<BullsEye Latitude="32.18125" Longitude="72.5" LineAngle="" ID="5" LineColor="16711935" LineThickness="0.1" Name="BullEye5" NumOfCircles="7" Radius="20.0" Unit="Nm" />
+	</BullsEye>
+	<Circle>
+		<Circle Latitude="33.48125" Longitude="72.8" XRadius="78.75" YRadius="-27.5" ID="" Name="" Unit="Nm" />
+		<Circle Latitude="31.34375" Longitude="72.75625" XRadius="49.0625" YRadius="-44.68747" ID="" Name="" Unit="Nm" />
+	</Circle>
+</ExerciseArea>
