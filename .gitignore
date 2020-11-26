@@ -32,7 +32,11 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-Assets/Resources/
+Assets/Resources/MissionData
+Assets/Resources/MSN001
+
+Assets/Resources/PlaneData
+Assets/Resources/data.txt
 Assets/MetaSDK/
 Assets/StreamingAssets/MissionData
 Assets/Extractor
@@ -44,8 +48,9 @@ Assets/Sprites/chinaData.jpg
 Library/metadata/bc/
 Assets/Materials/china.*
 Assets/Materials/OutputImagery_1.jpg
-Library/metadata/96/
-Library/metadata/51/
+Temp/
+*.psd
+*sargodha_terrain.jpg
 # NUNIT
 *.VisualState.xml
 TestResult.xml
