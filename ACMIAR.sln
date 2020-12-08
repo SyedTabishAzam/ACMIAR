@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACMIAR", "ACMIAR.csproj", "{10B0B503-D82C-DA37-FE22-1A2AD8CEAD60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACMIAR.Editor", "ACMIAR.Editor.csproj", "{098BA955-4BBE-3CC5-9C32-7437396B4DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACMIAR.Editor.Plugins", "ACMIAR.Editor.Plugins.csproj", "{25960E56-C86D-56E3-9280-D3B5C7FCABF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10B0B503-D82C-DA37-FE22-1A2AD8CEAD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B0B503-D82C-DA37-FE22-1A2AD8CEAD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B0B503-D82C-DA37-FE22-1A2AD8CEAD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B0B503-D82C-DA37-FE22-1A2AD8CEAD60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{098BA955-4BBE-3CC5-9C32-7437396B4DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098BA955-4BBE-3CC5-9C32-7437396B4DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098BA955-4BBE-3CC5-9C32-7437396B4DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098BA955-4BBE-3CC5-9C32-7437396B4DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25960E56-C86D-56E3-9280-D3B5C7FCABF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25960E56-C86D-56E3-9280-D3B5C7FCABF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25960E56-C86D-56E3-9280-D3B5C7FCABF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25960E56-C86D-56E3-9280-D3B5C7FCABF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

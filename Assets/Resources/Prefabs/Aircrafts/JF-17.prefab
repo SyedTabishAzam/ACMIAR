@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 114312017035751984}
   - component: {fileID: 114415253114021248}
   - component: {fileID: 114935278662309544}
-  - component: {fileID: 114746811562948870}
   m_Layer: 0
   m_Name: JF-17
   m_TagString: Aircrafts
@@ -177,27 +176,6 @@ MonoBehaviour:
     i15: 37
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114746811562948870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1008707359951160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114935278662309544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,3 +189,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentObject: {fileID: 0}
   initialNetworkPosition: {x: 0, y: 0, z: 0}
+  initialNetworkRotation: {x: 0, y: 0, z: 0, w: 0}

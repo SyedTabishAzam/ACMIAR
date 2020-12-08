@@ -4,7 +4,8 @@ using UnityEngine;
 using System;
 using System.Globalization;
 
-public class ButtonTesting : MonoBehaviour {
+public class ButtonTesting : MonoBehaviour
+{
 
     public GameObject MetaCameraRig;
     public GameObject InpModule;
@@ -25,7 +26,7 @@ public class ButtonTesting : MonoBehaviour {
     public bool ResetButton = false;
     private bool resetCheck = false;
     public bool SelectBullsEye = false;
-   // public bool CreateNewBullsEye = false;
+    // public bool CreateNewBullsEye = false;
     public bool ClearBullsEye = false;
     public bool DrawExerciseArea = false;
     public bool ClearExerciseArea = false;
@@ -69,8 +70,8 @@ public class ButtonTesting : MonoBehaviour {
 
     public int MetaMode = 1;
     private bool callFixedUpdate = false;
-   // private string originPlaneName;
-   // private string endPlaneName;
+    // private string originPlaneName;
+    // private string endPlaneName;
     private double gameEndTimeInSeconds = 0;
     DateTime startTime;
     DateTime endTime;
@@ -92,11 +93,12 @@ public class ButtonTesting : MonoBehaviour {
         }
     }
 
-    void Start () {
+    void Start()
+    {
         startValueOfTimeControl = TimeControl;
-       // originPlaneName= GameManager.GetComponent<TimeControl>().GetOriginPlaneName();
-       // endPlaneName = GameManager.GetComponent<TimeControl>().GetEndPlaneName();
-     
+        // originPlaneName= GameManager.GetComponent<TimeControl>().GetOriginPlaneName();
+        // endPlaneName = GameManager.GetComponent<TimeControl>().GetEndPlaneName();
+
 
         //End Time Calculations
         startTime = GameManager.GetComponent<TimeControl>().GetStartTime();
@@ -112,7 +114,7 @@ public class ButtonTesting : MonoBehaviour {
 
     void ToggleMetaOptions()
     {
-        MetaCameraRig.SetActive (true);
+        MetaCameraRig.SetActive(true);
         InpModule.SetActive(true);
         Camera.GetComponent<CameraZoom>().enabled = false;
         ImageLocker.SetActive(true);
@@ -135,19 +137,20 @@ public class ButtonTesting : MonoBehaviour {
         ImageLocker.SetActive(false);
         Camera.GetComponent<Camera>().targetDisplay = 0;
         ARCamera.GetComponent<Camera>().targetDisplay = 1;
-        MetaCanvas.GetComponent<Canvas>().worldCamera = Camera.GetComponent<Camera>() ;
+        MetaCanvas.GetComponent<Canvas>().worldCamera = Camera.GetComponent<Camera>();
         bullseyeManager.GetComponent<BullEyeHandle>().isSimple = true;
         Camera.GetComponent<AudioListener>().enabled = true;
         GameManager.GetComponent<ZoomCollection>().SetMeta(false);
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
-      
+
 
         //DrawAreaManager.GetComponent<ClippingPlane>().ChangeState(state);
-        
+
 
         if (AddNewRefConnection)
         {
@@ -155,9 +158,9 @@ public class ButtonTesting : MonoBehaviour {
             AddNewRefConnection = false;
         }
 
-        if(RemoveConnection)
+        if (RemoveConnection)
         {
-            if(rowToDel)
+            if (rowToDel)
             {
 
                 AircraftRefManager.GetComponent<ReferenceSelection>().RemoveSelected(rowToDel);
@@ -203,11 +206,11 @@ public class ButtonTesting : MonoBehaviour {
         if (CloseButton)
         {
             bullseyeManager.GetComponent<BullEyeHandle>().DeleteDangling();
-         
+
             CloseButton = false;
         }
         float differenceMoved = 0;
-       // TrailControl.crTrail = false;
+        // TrailControl.crTrail = false;
         if (startValueOfTimeControl != TimeControl)
         {
             timeControlChanged = true;
@@ -215,7 +218,7 @@ public class ButtonTesting : MonoBehaviour {
             startValueOfTimeControl = TimeControl;
         }
 
-		if(StartButton && !startCheck)
+        if (StartButton && !startCheck)
         {
             SelectOnStartButtonEvent();
             callFixedUpdate = true;
@@ -233,16 +236,16 @@ public class ButtonTesting : MonoBehaviour {
         if (!PauseButton)
             pauseCheck = false;
 
-        if(ResetButton && !resetCheck)
+        if (ResetButton && !resetCheck)
         {
             SelectOnResetButtonEvent();
-            
+
         }
 
         if (!ResetButton)
             resetCheck = false;
 
-        if(SpeedUpButton)
+        if (SpeedUpButton)
         {
             SelectOnSpeedUpEvent();
         }
@@ -270,7 +273,7 @@ public class ButtonTesting : MonoBehaviour {
             DecrementButton = false;
         }
         //int originPlaneCount = 0;
-        if(timeControlChanged)
+        if (timeControlChanged)
         {
             //For each aircraft
             //Set Cad to what it was on given time
@@ -280,22 +283,22 @@ public class ButtonTesting : MonoBehaviour {
             //originPlaneName = GameManager.GetComponent<TimeControl>().GetOriginPlaneName();
             foreach (Transform child in AirCraftParent.transform)
             {
-              
+
                 //if (child.name == originPlaneName)
                 //{
-                   
+
                 //    GameManager.GetComponent<TimeControl>().SetGameTime(child.GetComponent<movement>().GetLocalTime());
                 //}
 
-                
-                
-                if(child.gameObject.activeSelf)
+
+
+                if (child.gameObject.activeSelf)
                 {
-                    
+
                     child.GetComponent<movement>().SetCounterAllDataBySeconds(TimeControl * gameEndTimeInSeconds);
                 }
 
-    
+
                 //float t = curTime * 24f;
                 //float hours = Mathf.Floor(t);
                 //t *= 60;
@@ -318,9 +321,9 @@ public class ButtonTesting : MonoBehaviour {
 
         }
 
-     
 
-        if(SelectBullsEye)
+
+        if (SelectBullsEye)
         {
 
             bullseyeManager.GetComponent<BullEyeHandle>().OnSelectButtonClick();
@@ -336,19 +339,19 @@ public class ButtonTesting : MonoBehaviour {
 
         //bullseyeManager.GetComponent<BullEyeHandle>().GenerateRings(rings);
 
-        if(DrawExerciseArea)
+        if (DrawExerciseArea)
         {
 
             exerciseAreaManager.GetComponent<ExerciseAreaManager>().SetShowExerciseAreaTest(true);
             DrawExerciseArea = false;
         }
-        if(ClearExerciseArea)
+        if (ClearExerciseArea)
         {
             exerciseAreaManager.GetComponent<ExerciseAreaManager>().SetShowExerciseAreaTest(false);
             ClearExerciseArea = false;
         }
 
-        if(IncRow)
+        if (IncRow)
         {
             referenceManager.GetComponent<DashboardManager>().IncreaseRows();
             IncRow = false;
@@ -356,11 +359,11 @@ public class ButtonTesting : MonoBehaviour {
 
         if (decRow)
         {
-			referenceManager.GetComponent<DashboardManager>().DecreaseRows();
+            referenceManager.GetComponent<DashboardManager>().DecreaseRows();
             decRow = false;
         }
 
-        if(Pan)
+        if (Pan)
         {
             GameManager.GetComponent<ZoomCollection>().PanContinuous(PanDirection);
             Pan = false;
@@ -397,14 +400,14 @@ public class ButtonTesting : MonoBehaviour {
     void SelectOnZoomInEvent()
     {
         GameManager.GetComponent<ZoomCollection>().RpcZoomIn();
-        GameManager.GetComponent<TrailControl>().ClearTrail();
+        TrailControl.crTrail = true;
         ZoomInButton = false;
     }
 
     void SelectOnZoomOutEvent()
     {
         GameManager.GetComponent<ZoomCollection>().RpcZoomOut();
-        GameManager.GetComponent<TrailControl>().ClearTrail();
+        TrailControl.crTrail = true;
         ZoomOutButton = false;
     }
 
@@ -420,7 +423,7 @@ public class ButtonTesting : MonoBehaviour {
     }
 
     void SelectOnResetButtonEvent()
-       
+
     {
         GameManager.GetComponent<TimeControl>().MissionReset();
         dashboadManager.GetComponent<DashboardManager>().Reset();

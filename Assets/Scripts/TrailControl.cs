@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-public class TrailControl : MonoBehaviour
+using UnityEngine.Networking;
+public class TrailControl : NetworkBehaviour
 {
 
     public GameObject Aircraft_parent;
@@ -78,7 +78,8 @@ public class TrailControl : MonoBehaviour
 
     }
 
-    public void ClearTrail()
+    [ClientRpc]
+    public void RpcClearTrail()
     {
         foreach (Transform child in Aircraft_parent.transform)
         {
@@ -323,9 +324,10 @@ public class TrailControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (crTrail)
+        if (this.isServer && crTrail)
         {
-            ClearTrail();
+           RpcClearTrail();
+            TrailControl.crTrail = false;
         }
 
 

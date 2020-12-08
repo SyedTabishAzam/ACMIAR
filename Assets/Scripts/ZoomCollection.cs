@@ -18,6 +18,8 @@ public class ZoomCollection : NetworkBehaviour
     public float valueInputScale;
     public float maxZoomValue;
     private bool isBeingPlaced;
+    [SyncVar]
+    private Vector3 newPosition;
     private string contDirection = "None";
     private float panFactor;
     private Vector3 defaultPosition;
@@ -104,7 +106,7 @@ public class ZoomCollection : NetworkBehaviour
     public void RpcZoomIn()
     {
 
-       
+
         scale += 0.2f;
         //valZoom += 0.5f;
         //if (scale > 2.6)
@@ -179,8 +181,8 @@ public class ZoomCollection : NetworkBehaviour
 
         x = Mathf.Clamp(x, -(zoomable.transform.localScale.x - 1), (zoomable.transform.localScale.x - 1));
         z = Mathf.Clamp(z, defaultPosition.z - ((zoomable.transform.localScale.z - 1) * 2), defaultPosition.z);
-
-        zoomable.transform.localPosition = new Vector3(x, defaultPosition.y, z);
+        newPosition = new Vector3(x, defaultPosition.y, z);
+        zoomable.transform.localPosition = newPosition;
 
     }
 
@@ -211,6 +213,10 @@ public class ZoomCollection : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (this.isClient)
+        {
+            zoomable.transform.localPosition =  newPosition;
+        }
         if (scaleD)
         {
             ScalePrefab(0);

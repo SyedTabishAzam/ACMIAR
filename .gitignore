@@ -41,13 +41,10 @@ Assets/MetaSDK/
 Assets/StreamingAssets/MissionData
 Assets/Extractor
 Assets/HoloToolkit
-Library/PlayerDataCache/Data/sharedassets0.assets.resS
-Library/PlayerDataCache/Data/resources.assets.resS
-Library/PlayerDataCache/Data/resources.assets
 Assets/Sprites/chinaData.jpg
-Library/metadata/bc/
 Assets/Materials/china.*
 Assets/Materials/OutputImagery_1.jpg
+
 Temp/
 *.psd
 *sargodha_terrain.jpg

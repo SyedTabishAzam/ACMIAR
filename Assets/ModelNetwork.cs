@@ -30,6 +30,13 @@ public class ModelNetwork : NetworkBehaviour
     void Update()
     {
         if (transform.parent != parentObject)
+        {
             transform.SetParent(parentObject);
+          //  GetComponent<BoxCollider>().enabled = true;
+        }
+        if (transform.localRotation.eulerAngles.y != 180)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 }

@@ -97,9 +97,9 @@ public class SpawnAircrafts : NetworkBehaviour
 
             GameObject instance = Instantiate(model, aircraft.transform);
             instance.GetComponent<ModelNetwork>().parentObject = aircraft.transform;
-            instance.GetComponent<ModelNetwork>().RpcReparent();
             instance.GetComponent<ModelNetwork>().initialNetworkPosition = instance.transform.position;
             instance.GetComponent<ModelNetwork>().initialNetworkRotation = instance.transform.rotation;
+            instance.GetComponent<ModelNetwork>().RpcReparent();
             NetworkServer.Spawn(instance);
 
             aircraft.gameObject.SetActive(true);
@@ -108,21 +108,25 @@ public class SpawnAircrafts : NetworkBehaviour
 
             //instantiate Plane Info 
             GameObject planeInfoObject = Instantiate(planeInfoPrefab, aircraft.transform) as GameObject;
+            planeInfoObject.GetComponent<Planeinfo>().parentObject = aircraft.transform;
+            planeInfoObject.GetComponent<Planeinfo>().linePosition1 = planeInfoObject.transform.localPosition;
+            planeInfoObject.GetComponent<Planeinfo>().linePosition2 = aircraft.transform.localPosition;
+            NetworkServer.Spawn(planeInfoObject);
+
             planeInfoObject.SetActive(false);
-            aircraft.gameObject.GetComponent<movement>().planeInfo = planeInfoObject.GetComponentInChildren<Transform>().Find("Pivot").Find("ContentParent").Find("Label").gameObject;
-            LineRenderer lineRenderer = planeInfoObject.GetComponent<LineRenderer>();
-            lineRenderer.SetPosition(0, planeInfoObject.transform.localPosition);
-            lineRenderer.SetPosition(1, aircraft.transform.localPosition);
+            aircraft.gameObject.GetComponent<movement>().planeInfo = planeInfoObject;//.GetComponentInChildren<Transform>().Find("Pivot").Find("ContentParent").Find("Label").gameObject;
+          //  LineRenderer lineRenderer = planeInfoObject.GetComponent<LineRenderer>();
             //Debug.Log(aircraft.transform.position);
-            aircraft.gameObject.GetComponent<movement>().setRenderer(lineRenderer);
+            //aircraft.gameObject.GetComponent<movement>().setRenderer(lineRenderer);
 
             //aircraft.gameObject.GetComponent<Button>().onClick.AddListener(instance.GetComponent<CollisionDetection>().OnClicked);
             //aircraft.gameObject.GetComponent<Button>().onClick.AddListener(aircraft.gameObject.GetComponent<movement>().ToggleLaunchMissile);
             //aircraft info trigger 
             //Instantiate Call Sign Object 
             GameObject CallsignDisplayObject = Instantiate(CallsignDisplayPrefab, instance.transform) as GameObject;
-            // CallsignDisplayObject.GetComponent<SpriteTextFactory>().RpcSpawnWithParams(instance.transform.name,CallsignDisplayObject.transform.position);
-            // NetworkServer.Spawn(CallsignDisplayObject);
+            CallsignDisplayObject.GetComponent<SpriteTextFactory>().parentObject = instance.transform;
+            CallsignDisplayObject.GetComponent<SpriteTextFactory>().RpcSpawnWithParams(instance.transform.position);
+            NetworkServer.Spawn(CallsignDisplayObject);
 
             //Problem
             string name = aircraft.gameObject.GetComponent<movement>().getCallSign();
@@ -135,7 +139,7 @@ public class SpawnAircrafts : NetworkBehaviour
             aircraft.gameObject.GetComponent<movement>().setcallsign(CallsignDisplayObject);
             aircraft.gameObject.GetComponent<movement>().setInitialpos();
             CallsignDisplayObject.transform.parent = aircraft.transform;
-            //for dropdown menue
+            //for dropdown menu
             callsign.Add(name);
 
 

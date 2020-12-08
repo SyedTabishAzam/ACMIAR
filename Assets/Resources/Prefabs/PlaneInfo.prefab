@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4738615948983720}
   - component: {fileID: 120491294944951210}
   - component: {fileID: 114470810816009062}
+  - component: {fileID: 114226713404448586}
   m_Layer: 0
   m_Name: PlaneInfo
   m_TagString: Untagged
@@ -392,6 +393,38 @@ MonoBehaviour:
   RoundedEdges: 1
   RoundedCaps: 1
   lineRenderer: {fileID: 0}
+--- !u!114 &114226713404448586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633018331377502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 109
+    i1: 222
+    i2: 133
+    i3: 115
+    i4: 87
+    i5: 201
+    i6: 62
+    i7: 244
+    i8: 216
+    i9: 195
+    i10: 232
+    i11: 45
+    i12: 12
+    i13: 247
+    i14: 97
+    i15: 43
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114290989611064040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,6 +449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a01518e55cf984382839a72a249115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linePosition1: {x: 0, y: 0, z: 0}
+  linePosition2: {x: 0, y: 0, z: 0}
+  Labeltext: 
+  parentObject: {fileID: 0}
 --- !u!114 &114843708553530066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,6 +556,12 @@ LineRenderer:
       - serializedVersion: 2
         time: 0.011087418
         value: 0.4533329
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6475771
+        value: 0.72131145
         inSlope: 0
         outSlope: 0
         tangentMode: 0

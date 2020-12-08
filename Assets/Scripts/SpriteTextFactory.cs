@@ -25,10 +25,10 @@ public class SpriteTextFactory : NetworkBehaviour {
     public Transform parentObject;
 
     [ClientRpc]
-    public void RpcSpawnWithParams(string parentName, Vector3 position)
+    public void RpcSpawnWithParams( Vector3 position)
     {
-        parentObject = GameObject.Find(parentName).transform;
         transform.position = position;
+        
     }
 
     void Update()
@@ -41,7 +41,6 @@ public class SpriteTextFactory : NetworkBehaviour {
     void Start () {
         textToDisplay = "Empty";
         Init();
-      
     }
 
    public void ChangeText(string text)

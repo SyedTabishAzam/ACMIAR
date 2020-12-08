@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClippingPlane : MonoBehaviour {
+public class ClippingPlane : MonoBehaviour
+{
 
     public Material[] mat;
     public GameObject[] planeWalls;//,plane2Wall,plane3Wall,plane4Wall;
@@ -18,25 +19,26 @@ public class ClippingPlane : MonoBehaviour {
     {
         Shader.WarmupAllShaders();
 
-        if(!init)
+        if (!init)
         {
             ObjectsToClip = new List<GameObject>();
             init = true;
         }
         //  InitMaterials();
         state = "IDLE";
-		foreach (GameObject go in Terrain) {
+        foreach (GameObject go in Terrain)
+        {
 
-			AddObjectToList(go);
-		}
+            AddObjectToList(go);
+        }
         RecreateClippedMaterial();
     }
 
     public void AddObjectToList(GameObject obj)
     {
-        
 
-        if(!init )
+
+        if (!init)
         {
             ObjectsToClip = new List<GameObject>();
             init = true;
@@ -46,17 +48,17 @@ public class ClippingPlane : MonoBehaviour {
 
     private void RecreateClippedMaterial()
     {
-        foreach(GameObject go in ObjectsToClip)
+        foreach (GameObject go in ObjectsToClip)
         {
-            if(go )
+            if (go)
             {
-                if(!go.name.Contains("Terrain"))
+                if (!go.name.Contains("Terrain"))
                 {
                     Color col = go.GetComponent<Renderer>().material.color;
                     float brightness = go.GetComponent<Renderer>().material.GetFloat("_myRange");
                     AddNewMaterialToGO(go, go.GetComponent<Renderer>().material.shader.name);
                     go.GetComponent<Renderer>().material.color = col;
-                    go.GetComponent<Renderer>().material.SetFloat("_myRange",brightness);
+                    go.GetComponent<Renderer>().material.SetFloat("_myRange", brightness);
 
                 }
                 else
@@ -69,7 +71,7 @@ public class ClippingPlane : MonoBehaviour {
         }
     }
 
-    private void AddNewMaterialToGO(GameObject clippingObject,string ShaderName)
+    private void AddNewMaterialToGO(GameObject clippingObject, string ShaderName)
     {
         Renderer rend = clippingObject.GetComponent<Renderer>();
         rend.material = new Material(Shader.Find(ShaderName));
@@ -95,7 +97,7 @@ public class ClippingPlane : MonoBehaviour {
             //transfer values from plane to vector4
             planeRepresentation[index] = new Vector4(plane.normal.x, plane.normal.y, plane.normal.z, plane.distance);
             index++;
-            
+
             //pass vector to shader
         }
 
@@ -113,29 +115,29 @@ public class ClippingPlane : MonoBehaviour {
 
         //create plane
 
-        if(state == "ISPLACED")
+        if (state == "ISPLACED")
         {
             RecreateClippedMaterial();
             state = "IDLE";
         }
 
-		if(state == "REFRESH")
-		{
-			RecreateClippedMaterial();
-			state = "IDLE";
-		}
-
-        if(state=="ISMOVING")
+        if (state == "REFRESH")
         {
-         //   HideAllObjects();
+            RecreateClippedMaterial();
+            state = "IDLE";
         }
-     
-            
+
+        if (state == "ISMOVING")
+        {
+            //   HideAllObjects();
+        }
+
+
     }
 
     void HideAllObjects()
     {
-      
+
     }
 
     public void ChangeState(string _state)
@@ -148,15 +150,15 @@ public class ClippingPlane : MonoBehaviour {
         if (other.name.Contains("bullseye"))
         {
             other.transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
-			other.gameObject.layer = 8;
-			foreach (Transform child in other.transform) 
-			{
-				child.gameObject.SetActive (false);
-			}
+            other.gameObject.layer = 8;
+            foreach (Transform child in other.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
 
         }
-		Debug.Log (other.name);
-		
+        Debug.Log(other.name);
+
         if (other.tag == "Aircrafts")
         {
             //Debug name
@@ -165,10 +167,10 @@ public class ClippingPlane : MonoBehaviour {
             //Deactive the aircraft model
             other.transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-			//deadsymbol
-			if (other.transform.childCount!=0)
-				other.transform.GetChild(0).gameObject.SetActive(false);
-			
+            //deadsymbol
+            if (other.transform.childCount != 0)
+                other.transform.GetChild(0).gameObject.SetActive(false);
+
             //Deactive aircraft callsign
             //other.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -182,15 +184,15 @@ public class ClippingPlane : MonoBehaviour {
             //}
 
             //Deactivate aircraft Calculations for airRef
-            for(int i = 1;i<other.transform.parent.childCount;i++)
+            for (int i = 1; i < other.transform.parent.childCount; i++)
             {
                 other.transform.parent.GetChild(i).gameObject.SetActive(false);
                 Debug.Log(other.transform.parent.GetChild(i).gameObject.name + " " + other.transform.parent.childCount + " " + i);
             }
 
-           
+
             //Switch aircraft layer to non touchable
-			other.gameObject.layer = 8; 
+            other.gameObject.layer = 8;
         }
     }
 
@@ -199,24 +201,27 @@ public class ClippingPlane : MonoBehaviour {
         if (other.name.Contains("bullseye"))
         {
             other.transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
-			other.gameObject.layer = 0; 
-			foreach (Transform child in other.transform) 
-			{
-				child.gameObject.SetActive(true);
-			}
+            other.gameObject.layer = 0;
+            foreach (Transform child in other.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
-		if (other.transform.parent.name.Contains("Display"))
-		{
-			other.gameObject.SetActive (true);
 
-		}
-        if (other.tag=="Aircrafts")
+        if (!other.transform.parent)
+            return;
+
+        if ( other.transform.parent.name.Contains("Display"))
+        {
+            other.gameObject.SetActive(true);
+        }
+        if (other.tag == "Aircrafts")
         {
             //Activate the aircraft model
             other.transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
 
             //Set plane info to what it was before going out of view
-			other.transform.parent.GetChild(1).gameObject.SetActive(other.transform.parent.gameObject.GetComponent<movement>().GetSelected());
+            other.transform.parent.GetChild(1).gameObject.SetActive(other.transform.parent.gameObject.GetComponent<movement>().GetSelected());
 
             //Set callsign to true
             //Set other children of parent (specially calculations) to true
@@ -234,7 +239,7 @@ public class ClippingPlane : MonoBehaviour {
             other.GetComponentInParent<TrailRenderer>().enabled = true;
 
             //Set layer of aircraft to touchable
-            other.gameObject.layer = 0; 
+            other.gameObject.layer = 0;
         }
     }
 }

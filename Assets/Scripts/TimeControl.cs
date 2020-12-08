@@ -16,10 +16,11 @@ public class TimeControl : NetworkBehaviour
     public bool reverse = false;
     public static bool reset = false;
 
-
+    [SyncVar]
+    private bool isSimStarted = false;
 
     public GameObject Aircraft_parent;
-    public GameObject time;
+    public GameObject time,startGO,endGO;
     public GameObject sliderTime;
 
     DateTime starttime = DateTime.Parse("23:59:59");
@@ -32,12 +33,15 @@ public class TimeControl : NetworkBehaviour
     int highestAllDataCount = 0;
     private string originPlaneName;
     private string endPlaneName;
-    private Text local, startt, end; 
+    [SyncVar]
+    private string localTimeNetwork;
+    private Text local;
+    private Text startt, end;
 
     private double gameEndTimeInSeconds = 0;
     [Range(0.001f, 1f)]
     public float Time_Control;
-   // private float diffMoved;
+    // private float diffMoved;
     private int offset;
     private bool timeControlChanged = false;
     private float startValueOfTimeControl;
@@ -46,27 +50,37 @@ public class TimeControl : NetworkBehaviour
 
     string compiledStartTimeFromUI;
 
-    public void StartManual()
+    public void Awake()
+    {
+        planeChildArr = new List<movement>();
+    }
+
+    public void Start()
     {
         local = time.transform.GetChild(0).GetComponent<Text>();
-        startt = time.transform.GetChild(1).GetComponent<Text>();
-        end = time.transform.GetChild(2).GetComponent<Text>();
-        
-       //Debug.Log(gametime);
-        planeChildArr = new List<movement>();
+        startt = startGO.GetComponent<Text>();
+        end = endGO.GetComponent<Text>();
+    }
+
+    public void StartManual()
+    {
+        isSimStarted = true;
+       
+        //Debug.Log(gametime);
+
         GameObject originPlaneObject;
 
         foreach (Transform child in Aircraft_parent.transform)
         {
             movement Movement = child.gameObject.GetComponent<movement>();
             planeChildArr.Add(Movement);
-			//get start time from UI
-			//get changed start time
+            //get start time from UI
+            //get changed start time
 
             string temp = Movement.GetStartTime(); // g
             string temp2 = Movement.GetEndTime();
-			//if UI Value == temp 
-           
+            //if UI Value == temp 
+
 
             string PlaneNameAfterUIInput = PlayerPrefs.GetString("ActvePlaneName").ToString();
 
@@ -107,8 +121,8 @@ public class TimeControl : NetworkBehaviour
 
             }
 
-            
-           
+
+
 
             child.gameObject.SetActive(false);
 
@@ -145,10 +159,10 @@ public class TimeControl : NetworkBehaviour
         //Duration();
         gametime = starttime;
         startvalueSlider = GetSliderValue();
-        
+
         local.text = "Local Time:\n" + gametime.ToString("HH:mm:ss");
         startt.text = starttime.ToString("HH:mm:ss");
-        end.text=endtime.ToString("HH:mm:ss");
+        end.text = endtime.ToString("HH:mm:ss");
         InstantiateSlider();
 
     }
@@ -158,7 +172,7 @@ public class TimeControl : NetworkBehaviour
         return sliderTime.GetComponent<Slider>().value;
     }
 
-    
+
     public void InstantiateSlider()
     {
         //Time_Control is current slider value
@@ -175,9 +189,9 @@ public class TimeControl : NetworkBehaviour
         TimeSpan totalLength = GetEndTime() - GetStartTime();
         //Debug.Log("This is the total length of game " + totalLength);
         gameEndTimeInSeconds = highestAllDataCounter * 0.2f;//totalLength.TotalSeconds;
-        //Debug.Log("This is the total length of game CALCULATED USING SAMPLE LENGTH " + gameEndTimeInSeconds);
-       // diffMoved = Time.fixedDeltaTime / (float)gameEndTimeInSeconds;
-        //Debug.Log(diffMoved);
+                                                            //Debug.Log("This is the total length of game CALCULATED USING SAMPLE LENGTH " + gameEndTimeInSeconds);
+                                                            // diffMoved = Time.fixedDeltaTime / (float)gameEndTimeInSeconds;
+                                                            //Debug.Log(diffMoved);
     }
 
 
@@ -270,7 +284,18 @@ public class TimeControl : NetworkBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (isSimStarted)
+        {
+            if (this.isServer)
+                RpcCheckPlaneObjectClient();
+            if (this.isClient)
+                local.text = localTimeNetwork;
+        }
+
+
+
         JumptoTime();
+
         if (increment)
         {
             IncreaseGameTime();
@@ -278,7 +303,7 @@ public class TimeControl : NetworkBehaviour
             sliderTime.GetComponent<Slider>().value += (Time.fixedDeltaTime / (float)gameEndTimeInSeconds);
             startValueOfTimeControl = sliderTime.GetComponent<Slider>().value;
 
-            
+
             //sliderTime.GetComponent<Slider>().value= Time_Control;
         }
         if (decrement)
@@ -306,7 +331,7 @@ public class TimeControl : NetworkBehaviour
             MissionPause();
             pause = false;
         }
-       
+
         if (reverse)
         {
             MissionReverse();
@@ -349,21 +374,23 @@ public class TimeControl : NetworkBehaviour
     {
 
         gametime = gametime.AddSeconds(Time.fixedDeltaTime);
-        local.text = "Local Time:\n" + gametime.ToString("HH:mm:ss");
+        localTimeNetwork = "Local Time:\n" + gametime.ToString("HH:mm:ss");
+        local.text = localTimeNetwork;
         //Debug.Log(Time.fixedDeltaTime);
     }
     void DecreaseGameTime()
     {
 
         gametime = gametime.AddSeconds(-Time.fixedDeltaTime);
-        local.text = "Local Time:\n" + gametime.ToString("HH:mm:ss");
+        localTimeNetwork = "Local Time:\n" + gametime.ToString("HH:mm:ss");
+        local.text = localTimeNetwork;
         //Debug.Log(Time.fixedDeltaTime);
     }
 
     public void MissionReset()
     {
         //error.GetComponent<TextMesh>().text = "Debug: restarting";
-        
+
         //gametime = starttime;
         //local.text = "Local Time:\n" + gametime.ToString("HH:mm:ss");
         ////foreach (Transform child in Aircraft_parent.transform)
@@ -382,11 +409,11 @@ public class TimeControl : NetworkBehaviour
         //{
         //    x.ResetObject();
         //}
-      
+
 
         //Clear All Reference to reference
         GameObject.Find("AircraftRefManager").GetComponent<ReferenceSelection>().ClearAllConnections();
-       
+
         ////Clear all bulls eye
         GameObject.Find("BullsEyeManager").GetComponent<BullEyeHandle>().OnClearAllClick();
 
@@ -407,7 +434,7 @@ public class TimeControl : NetworkBehaviour
         sliderTime.GetComponent<Slider>().value = 0;
 
         reset = true;
-}
+    }
 
     public void MissionReverse()
     {
@@ -420,7 +447,7 @@ public class TimeControl : NetworkBehaviour
     }
     public void setStart()
     {
-        start = true;                                                                                                                                                                                                                                                                   
+        start = true;
     }
 
     public void MissionPause()
@@ -483,6 +510,16 @@ public class TimeControl : NetworkBehaviour
                 script.StartReal(false);
 
             }
+        }
+    }
+
+    [ClientRpc]
+    void RpcCheckPlaneObjectClient()
+    {
+        foreach (Transform child in Aircraft_parent.transform)
+        {
+            child.gameObject.GetComponent<movement>().CheckObjectSpawn();
+            child.gameObject.GetComponent<movement>().UpdatePlaneinfoDisplay();
         }
     }
 

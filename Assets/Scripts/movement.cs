@@ -29,16 +29,25 @@ public class movement : NetworkBehaviour
     string textfileName;
     private string textFile;                      //type changed from TextAsset to string for testing
 
-    private Vector3 targetPosition, startPosition;
-    private Quaternion targetRotation, startRotation;
+    [SyncVar]
+    private Vector3 targetPosition;
+    private Vector3 startPosition;
+    [SyncVar]
+    private Quaternion targetRotation;
+    private Quaternion startRotation;
     [SyncVar]
     public string transformName;
     [SyncVar]
+    public string dashboardDataStr;
+    [SyncVar]
     public Vector3 initialNetworkPosition;
+    [SyncVar]
+    public Vector3 localPosition;
     [SyncVar]
     public GameObject childObject;
     string Name;
     string tailID;
+    [SyncVar]
     string color;
     string shortCall;
     string localtime;
@@ -54,6 +63,7 @@ public class movement : NetworkBehaviour
     //public GameObject time;
     bool start = false;
     //public GameObject slider;
+    [SyncVar]
     bool startReal = false;
     private Vector3 initialPosition;
     float timeToReachTarget;
@@ -73,6 +83,7 @@ public class movement : NetworkBehaviour
     string missionID;
     int offset;
     bool changed = false;
+    [SyncVar]
     bool selected = false;
     bool playdirection = true; //forward
     bool pause = false;
@@ -108,7 +119,6 @@ public class movement : NetworkBehaviour
 
     void Awake()
     {
-
         InitializeExtract();
         ExtractData();
     }
@@ -116,6 +126,7 @@ public class movement : NetworkBehaviour
 
     void Reparent()
     {
+        gameObject.SetActive(false);
         Transform parent = GameObject.Find("Terrain").transform.Find("Zoomables").Find("Aircrafts");
         transform.SetParent(parent);
 
@@ -195,7 +206,8 @@ public class movement : NetworkBehaviour
     {
         //Time Latitude    Longitude BaroAlt Roll Pitch   Heading MachNo  CAS G   AOA TrueAirSpeed    IAS AGL BRM Radar Range
         // "A/C Type", "Heading", "Altitude", "CAS", "TAS", "IAS", "Mach No.", "G", "AOA", "Latitude", "Longitude", "AGL", "Pitch"
-
+        if (this.isClient)
+            return dashboardDataStr.Split(',');
 
         List<string> temp = new List<string>();
 
@@ -545,7 +557,7 @@ public class movement : NetworkBehaviour
         //dashboardData = alldata[counterAllData];
         counterAllData = 1;
         //time.GetComponent<TextMesh>().text = "Local Time:\n" + localtime; 
-        planeInfo.GetComponent<TextMesh>().text = "Callsign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "ft\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString() + "kn";
+        planeInfo.GetComponent<Planeinfo>().Labeltext = "Callsign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "ft\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString() + "kn";
 
     }
 
@@ -672,7 +684,7 @@ public class movement : NetworkBehaviour
         //dashboardData = alldata[counterAllData];
         counterAllData = positionId + 1;
         //time.GetComponent<TextMesh>().text = "Local Time:\n" + localtime; 
-        planeInfo.GetComponent<TextMesh>().text = "Callsign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "ft\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString() + "kn";
+        planeInfo.GetComponent<Planeinfo>().Labeltext = "Callsign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "ft\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString() + "kn";
     }
     public void PlaneInfoOff()
     {
@@ -680,12 +692,31 @@ public class movement : NetworkBehaviour
         selected = false;
     }
 
+    public void CheckObjectSpawn()
+    {
+        if (startReal)
+            gameObject.SetActive(true);
+        else
+            gameObject.SetActive(false);
+    }
+
+    public void UpdatePlaneinfoDisplay()
+    {
+        if (transform.childCount > 0)
+            if (selected)
+                transform.GetChild(1).gameObject.SetActive(true);
+            else
+                transform.GetChild(1).gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
-
+        if (this.isClient)
+        {
+            transform.localPosition = targetPosition;
+            transform.localRotation = targetRotation;
+        }
+        
         //Object Position and rotation Updated
         if (flag && startReal)
         {
@@ -698,11 +729,11 @@ public class movement : NetworkBehaviour
 
                     timerTime = 0f;
                     //Display();
-                    planeInfo.GetComponent<TextMesh>().text = "Call Sign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString();
+                    planeInfo.GetComponent<Planeinfo>().Labeltext = "Call Sign: " + callsign + "\nTailID: " + tailID + "\nAltitude: " + altitude.ToString() + "\nHeading: " + heading.ToString() + "\nSpeed: " + speed.ToString();
                     //time.GetComponent<TextMesh>().text = "Local Time:\n" + localtime;
                     List<float> data = alldata[counterAllData];
                     dashboardData = alldata[counterAllData - 1];
-
+                    dashboardDataStr = String.Join(",", dashboardData);
                     //alldata.RemoveAt(0);
                     if (playdirection)
                     {
@@ -770,8 +801,10 @@ public class movement : NetworkBehaviour
                 transform.localRotation = Quaternion.Slerp(startRotation, targetRotation, ratio);
                 // callSignObj.transform.localPosition = gameObject.transform.localPosition;
                 timeToReachTarget -= varDeltaTime;
-                anchor.SetPosition(0, gameObject.transform.GetChild(1).GetChild(1).position + (Vector3.down * 0.008f));
-                anchor.SetPosition(1, gameObject.transform.GetChild(0).position);
+                planeInfo.GetComponent<Planeinfo>().linePosition1 = gameObject.transform.GetChild(1).GetChild(1).position + (Vector3.down * 0.008f);
+                planeInfo.GetComponent<Planeinfo>().linePosition2 = gameObject.transform.GetChild(0).position;
+                //anchor.SetPosition(0, );
+                //anchor.SetPosition(1, );
 
 
                 //Vector3 v = Camera.main.transform.position - transform.position;
